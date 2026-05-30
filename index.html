@@ -285,9 +285,10 @@
     /* Wavy divider */
     .wave-divider {
       position: relative; height: 60px; overflow: hidden;
-      background: var(--off-white); margin-top: -1px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0e2a5a 100%);
+      margin-top: -1px;
     }
-    [data-theme="dark"] .wave-divider { background: var(--off-white); }
+    [data-theme="dark"] .wave-divider { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0e2a5a 100%); }
     .wave-divider svg { position: absolute; bottom: 0; width: 100%; }
 
     /* ============================================================
@@ -362,13 +363,14 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      position: relative; overflow: hidden;
+      position: relative;
     }
     .subject-card::before {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(135deg, transparent 60%, rgba(201,162,39,0.05));
       border-radius: var(--radius-card);
       transition: opacity var(--transition); opacity: 0;
+      pointer-events: none;
     }
     .subject-card:hover {
       transform: translateY(-6px) scale(1.015);
@@ -409,6 +411,7 @@
       font-family: var(--font); border: none; cursor: pointer;
       transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
       box-shadow: 0 4px 14px rgba(10,31,68,0.25);
+      position: relative; z-index: 2;
     }
     .card-btn:hover {
       background: linear-gradient(135deg, var(--gold), var(--gold-dim));
@@ -461,7 +464,7 @@
        GUIDE SECTION
     ============================================================ */
     .guide-section { background: var(--gray-100); }
-    [data-theme="dark"] .guide-section { background: var(--gray-100); }
+    [data-theme="dark"] .guide-section { background: var(--navy-mid); }
     .guide-steps {
       display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
     }
@@ -806,7 +809,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <img src="https://i.ibb.co.com/JFvYqJqV/Desain-tanpa-judul-20260501-181058-0000.png"
+      <img src="https://i.ibb.co/JFvYqJqV/Desain-tanpa-judul-20260501-181058-0000.png"
            alt="Logo SDN PLOSOBUDEN" class="footer-logo" />
       <div class="footer-info">
         <div class="footer-school">SDN PLOSOBUDEN</div>
